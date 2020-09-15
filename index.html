@@ -28,7 +28,7 @@
     <link rel="alternative" href="/atom.xml" title="小张的Dream~路在前方" type="application/atom+xml">
   
   
-    <link rel="icon" href="/im/wnagzhan.jpg">
+    <link rel="icon" href="/img/wnagzhan.jpg">
   
   
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
@@ -138,7 +138,7 @@
 			
 			
 			<div>
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=477310237 &auto=1&height=66"></iframe>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1334445174&auto=1&height=66"></iframe>
 			</div>
 			
 				
@@ -222,7 +222,7 @@
             
 
   
-    <article id="post-创建maven工程遇到的坑（私有库）：Downloading_ http___repo.maven.apache.org_maven2_" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Spring报错：Cannot locate BeanDefinitionDecorator for element [config] Offending resource" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -230,7 +230,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/09/13/%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%EF%BC%88%E7%A7%81%E6%9C%89%E5%BA%93%EF%BC%89%EF%BC%9ADownloading_%20http___repo.maven.apache.org_maven2_/" target="_blank">创建maven工程遇到的坑（私有库）：Downloading_ http___repo.maven.apache.org_maven2_</a>
+	  <a class="article-title" href="/2020/09/15/Spring%E6%8A%A5%E9%94%99%EF%BC%9ACannot%20locate%20BeanDefinitionDecorator%20for%20element%20%5Bconfig%5D%20Offending%20resource/" target="_blank">Spring报错：Cannot locate BeanDefinitionDecorator for element [config] Offending resource</a>
   
     </h1>
   
@@ -238,8 +238,8 @@
 
   
   
-<a href="/2020/09/13/%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%EF%BC%88%E7%A7%81%E6%9C%89%E5%BA%93%EF%BC%89%EF%BC%9ADownloading_%20http___repo.maven.apache.org_maven2_/" class="archive-article-date">
-        <time datetime="2020-09-13T14:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
+<a href="/2020/09/15/Spring%E6%8A%A5%E9%94%99%EF%BC%9ACannot%20locate%20BeanDefinitionDecorator%20for%20element%20%5Bconfig%5D%20Offending%20resource/" class="archive-article-date">
+        <time datetime="2020-09-15T13:20:25.396Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
 </a>
 
   
@@ -251,21 +251,19 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="最近学习Springmvc框架遇到的疑问："><a href="#最近学习Springmvc框架遇到的疑问：" class="headerlink" title="最近学习Springmvc框架遇到的疑问："></a>最近学习Springmvc框架遇到的疑问：</h1><blockquote>
-<p>创建好一个maven工程后，当你导入其他坐标（也就是jar包），下载极慢，并且会提醒下载Downloading:<br><a target="_blank" rel="noopener" href="http://repo.maven.apache.org/maven2/">http://repo.maven.apache.org/maven2/</a></p>
-</blockquote>
-<p>原因:</p>
-<blockquote>
-<p>自己定义pom.xml都是继承自super pom：<br><a target="_blank" rel="noopener" href="http://maven.apache.org/ref/3.0.4/maven-model-builder/super-pom.html">http://maven.apache.org/ref/3.0.4/maven-model-builder/super-pom.html</a><br>因此，当maven项目需要下载一些metadata、pom、jar的时候，会优先去中央仓库下载，导致内网用户各种报错！</p>
-</blockquote>
-<p>解决方案</p>
-<p>在maven工程的pom.xml中添加如下配置</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;repositories&gt;</span><br><span class="line">    &lt;repository&gt;</span><br><span class="line">        &lt;id&gt;central&lt;/id&gt;</span><br><span class="line">        &lt;url&gt;http:<span class="comment">//host:port/content/groups/public&lt;/url&gt;</span></span><br><span class="line">    &lt;/repository&gt;</span><br><span class="line">&lt;/repositories&gt;</span><br><span class="line"></span><br><span class="line">&lt;pluginRepositories&gt;</span><br><span class="line">    &lt;pluginRepository&gt;</span><br><span class="line">        &lt;id&gt;central&lt;/id&gt;</span><br><span class="line">        &lt;url&gt;http:<span class="comment">//host:port/content/groups/public&lt;/url&gt;</span></span><br><span class="line">    &lt;/pluginRepository&gt;</span><br><span class="line">&lt;/pluginRepositories&gt;</span><br></pre></td></tr></table></figure>
-<p>参考地址：</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/12789488/how-do-you-stop-maven-from-trying-to-access-http-repo-maven-apache-org">https://stackoverflow.com/questions/12789488/how-do-you-stop-maven-from-trying-to-access-http-repo-maven-apache-org</a></p>
-</blockquote>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25638340&auto=1&height=66"></iframe>
 
+<blockquote>
+<p>由于自己的粗心大意，在配置Spring AOP时出错 看错误</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200824092950998.png#pic_center" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>根据提示显示测试代码里面（找不到配置文件bean.xml）</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200824093141961.png#pic_center" alt="在这里插入图片描述"></p>
+    
+    <a class="article-more-a" href="/2020/09/15/Spring%E6%8A%A5%E9%94%99%EF%BC%9ACannot%20locate%20BeanDefinitionDecorator%20for%20element%20%5Bconfig%5D%20Offending%20resource/#more">more >></a>
+    
     
 
     
@@ -276,11 +274,30 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Spring框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/13/%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%EF%BC%88%E7%A7%81%E6%9C%89%E5%BA%93%EF%BC%89%EF%BC%9ADownloading_%20http___repo.maven.apache.org_maven2_/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/09/15/Spring%E6%8A%A5%E9%94%99%EF%BC%9ACannot%20locate%20BeanDefinitionDecorator%20for%20element%20%5Bconfig%5D%20Offending%20resource/">展开全文 >></a>
     </p>
     
 
@@ -310,7 +327,7 @@
 
 
   
-    <article id="post-Spring报错：Cannot locate BeanDefinitionDecorator for element [config] Offending resource" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-创建maven工程遇到的坑（私有库）：Downloading_ http___repo.maven.apache.org_maven2_" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -318,7 +335,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/09/11/Spring%E6%8A%A5%E9%94%99%EF%BC%9ACannot%20locate%20BeanDefinitionDecorator%20for%20element%20%5Bconfig%5D%20Offending%20resource/" target="_blank">Spring报错：Cannot locate BeanDefinitionDecorator for element [config] Offending resource</a>
+	  <a class="article-title" href="/2020/09/13/%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%EF%BC%88%E7%A7%81%E6%9C%89%E5%BA%93%EF%BC%89%EF%BC%9ADownloading_%20http___repo.maven.apache.org_maven2_/" target="_blank">创建maven工程遇到的坑（私有库）：Downloading_ http___repo.maven.apache.org_maven2_</a>
   
     </h1>
   
@@ -326,8 +343,8 @@
 
   
   
-<a href="/2020/09/11/Spring%E6%8A%A5%E9%94%99%EF%BC%9ACannot%20locate%20BeanDefinitionDecorator%20for%20element%20%5Bconfig%5D%20Offending%20resource/" class="archive-article-date">
-        <time datetime="2020-09-11T14:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
+<a href="/2020/09/13/%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%EF%BC%88%E7%A7%81%E6%9C%89%E5%BA%93%EF%BC%89%EF%BC%9ADownloading_%20http___repo.maven.apache.org_maven2_/" class="archive-article-date">
+        <time datetime="2020-09-13T14:21:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
 </a>
 
   
@@ -339,26 +356,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <blockquote>
-<p>由于自己的粗心大意，在配置Spring AOP时出错 看错误</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200824092950998.png#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>根据提示显示测试代码里面（找不到配置文件bean.xml）</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200824093141961.png#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>于是我开始百度，寻找解决方法（经过半小时的寻找终于….emmm）   先看错误配置</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200824093233773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p><a href="aop:config">aop:config</a>标签应该是单独在外面，我把config标签放在了<bean>标签内部 正确配置如下</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200824093510962.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>错误总结：不细心，知识点记得不牢靠，要多练习多记忆</p>
-</blockquote>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25638340&auto=1&height=66"></iframe>
 
+<h1 id="最近学习Springmvc框架遇到的疑问："><a href="#最近学习Springmvc框架遇到的疑问：" class="headerlink" title="最近学习Springmvc框架遇到的疑问："></a>最近学习Springmvc框架遇到的疑问：</h1><blockquote>
+<p>创建好一个maven工程后，当你导入其他坐标（也就是jar包），下载极慢，并且会提醒下载Downloading:<br><a target="_blank" rel="noopener" href="http://repo.maven.apache.org/maven2/">http://repo.maven.apache.org/maven2/</a></p>
+</blockquote>
+    
+    <a class="article-more-a" href="/2020/09/13/%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%EF%BC%88%E7%A7%81%E6%9C%89%E5%BA%93%EF%BC%89%EF%BC%9ADownloading_%20http___repo.maven.apache.org_maven2_/#more">more >></a>
+    
     
 
     
@@ -369,11 +374,30 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">maven私有库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">maven仓库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/11/Spring%E6%8A%A5%E9%94%99%EF%BC%9ACannot%20locate%20BeanDefinitionDecorator%20for%20element%20%5Bconfig%5D%20Offending%20resource/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/09/13/%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%EF%BC%88%E7%A7%81%E6%9C%89%E5%BA%93%EF%BC%89%EF%BC%9ADownloading_%20http___repo.maven.apache.org_maven2_/">展开全文 >></a>
     </p>
     
 
@@ -432,20 +456,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><blockquote>
-<p>mybatis入门案例出现“Exception in thread “main”<br>java.lang.NullPointerException”问题 （一般是配置文件有问题）</p>
-<p>先看错误</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200817202304326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>看代码</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200817202441511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>控制台定位代码错误发现第一行加载的配置文件居然是null 解决方法见图，加“/”就好了并且成功打印user对象</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200817202746238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25638340&auto=1&height=66"></iframe>
 
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><blockquote>
+<p>mybatis入门案例出现“Exception in thread “main”<br>java.lang.NullPointerException”问题 （一般是配置文件有问题）</p>
+</blockquote>
+    
+    <a class="article-more-a" href="/2020/09/08/mybatis%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%E5%87%BA%E7%8E%B0%E2%80%9CException%20in%20thread%20%E2%80%9Cmain%E2%80%9C%20java.lang.NullPointerException%E2%80%9D%E9%97%AE%E9%A2%98/#more">more >></a>
+    
     
 
     
@@ -456,6 +474,25 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Mybatis框架</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -519,16 +556,15 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Mybatis读取配置文件，找不到Resources这个里面的方法Resources-getResourceAsStream"><a href="#Mybatis读取配置文件，找不到Resources这个里面的方法Resources-getResourceAsStream" class="headerlink" title="Mybatis读取配置文件，找不到Resources这个里面的方法Resources.getResourceAsStream"></a>Mybatis读取配置文件，找不到Resources这个里面的方法Resources.getResourceAsStream</h1><blockquote>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25638340&auto=1&height=66"></iframe>
+
+
+<h1 id="Mybatis读取配置文件，找不到Resources这个里面的方法Resources-getResourceAsStream"><a href="#Mybatis读取配置文件，找不到Resources这个里面的方法Resources-getResourceAsStream" class="headerlink" title="Mybatis读取配置文件，找不到Resources这个里面的方法Resources.getResourceAsStream"></a>Mybatis读取配置文件，找不到Resources这个里面的方法Resources.getResourceAsStream</h1><blockquote>
 <p>   //1.读取配置文件<br>        InputStream in = Resources.getResourceAsStream(“SqlMapConfig.xml”);</p>
 </blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200817193954584.png#pic_center" alt="在这里插入图片描述"></p>
-<p>换一种写法，就不会报错误了</p>
-<blockquote>
-<p> //1.读取配置文件<br>        InputStream in = Resources.class.getResourceAsStream(“SqlMapConfig.xml”);</p>
-<p>问题迎刃而解</p>
-</blockquote>
-
+    
+    <a class="article-more-a" href="/2020/09/07/IDEA%E4%B8%AD%E2%80%9CMybatis%E2%80%9D%E6%89%BE%E4%B8%8D%E5%88%B0Resources%E8%BF%99%E4%B8%AA%E9%87%8C%E9%9D%A2%E7%9A%84getResourceAsStream%E6%96%B9%E6%B3%95%E2%80%9CResources.getResourceAsStream%E2%80%9C/#more">more >></a>
+    
     
 
     
@@ -617,9 +653,12 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>  内容</p>
-<h2 id="我们一起学猫叫"><a href="#我们一起学猫叫" class="headerlink" title="我们一起学猫叫"></a>我们一起学猫叫</h2><p>三杀</p>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25638340&auto=1&height=66"></iframe>
 
+<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>  内容</p>
+    
+    <a class="article-more-a" href="/2020/09/06/%E6%88%91%E6%98%AF%E5%B0%8F%E5%BC%A0/#more">more >></a>
+    
     
 
     
@@ -821,6 +860,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Spring框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">maven私有库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">maven仓库</a>
               </li>
             
             <div class="clearfix"></div>
