@@ -506,6 +506,35 @@
       placeholder: '看了这么久，你不想说两句吗？有问题可以通过此评论区联系小张！看到自会回复,上方还可以输入你的昵称和扣扣邮箱，扣扣邮箱是保密的'
     });
 </script>
+
+
+<script type="text/javascript">
+   fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("veditor").setAttribute("placeholder",data.hitokoto+"__"+data.from);
+    })
+    .catch(console.error)
+</script>
+
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+ jinrishici.load(function(result) {
+     var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author;
+     document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+ })
+</script>
+
+
+<style>
+.v[data-class=v] .veditor {
+    background-image: url(https://cdn.jsdelivr.net/gh/);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+</style>
     
 	
 	
