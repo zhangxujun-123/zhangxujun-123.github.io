@@ -6,28 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.csdn.net/qq_45621392">
-  <title>mybatis入门案例出现“Exception in thread “main“ java.lang.NullPointerException”问题 | 小张的Dream~路在前方</title>
+  <title>如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可 | 小张的Dream~路在前方</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="异常 mybatis入门案例出现“Exception in thread “main”java.lang.NullPointerException”问题 （一般是配置文件有问题）">
+  <meta name="description" content="如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”当用Maven创建Web项目到这一步的时候，在properties中添加一个参数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mybatis入门案例出现“Exception in thread “main“ java.lang.NullPointerException”问题">
-<meta property="og:url" content="https://blog.csdn.net/qq_45621392/2020/09/15/mybatis%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%E5%87%BA%E7%8E%B0%E2%80%9CException%20in%20thread%20%E2%80%9Cmain%E2%80%9C%20java.lang.NullPointerException%E2%80%9D%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可">
+<meta property="og:url" content="https://blog.csdn.net/qq_45621392/2020/09/21/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Maven%E4%BD%BF%E7%94%A8%E9%AA%A8%E6%9E%B6%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E8%BF%87%E6%85%A2%E2%80%9C%E5%8F%AA%E9%9C%80%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E9%94%AE%E5%80%BC%E5%AF%B9%E5%8D%B3%E5%8F%AF%E2%80%9D/index.html">
 <meta property="og:site_name" content="小张的Dream~路在前方">
-<meta property="og:description" content="异常 mybatis入门案例出现“Exception in thread “main”java.lang.NullPointerException”问题 （一般是配置文件有问题）">
+<meta property="og:description" content="如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”当用Maven创建Web项目到这一步的时候，在properties中添加一个参数">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200817202304326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200817202441511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200817202746238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="article:published_time" content="2020-09-15T13:20:25.530Z">
-<meta property="article:modified_time" content="2020-09-16T08:08:59.231Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200827150657473.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020082715085366.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200827151129653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2020-09-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-10-18T13:13:34.329Z">
 <meta property="article:author" content="小张的Dream">
-<meta property="article:tag" content="Mybatis框架">
 <meta property="article:tag" content="java">
 <meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="maven">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200817202304326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200827150657473.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="小张的Dream~路在前方" type="application/atom+xml">
   
@@ -223,14 +223,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mybatis入门案例出现“Exception in thread “main“ java.lang.NullPointerException”问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      mybatis入门案例出现“Exception in thread “main“ java.lang.NullPointerException”问题
+      如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可
     </h1>
   
 
@@ -242,8 +242,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/09/15/mybatis%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%E5%87%BA%E7%8E%B0%E2%80%9CException%20in%20thread%20%E2%80%9Cmain%E2%80%9C%20java.lang.NullPointerException%E2%80%9D%E9%97%AE%E9%A2%98/" class="archive-article-date">
-        <time datetime="2020-09-15T13:20:25.530Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-15</time>
+<a href="/2020/09/21/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Maven%E4%BD%BF%E7%94%A8%E9%AA%A8%E6%9E%B6%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E8%BF%87%E6%85%A2%E2%80%9C%E5%8F%AA%E9%9C%80%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E9%94%AE%E5%80%BC%E5%AF%B9%E5%8D%B3%E5%8F%AF%E2%80%9D/" class="archive-article-date">
+        <time datetime="2020-09-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-21</time>
 </a>
 
   
@@ -256,7 +256,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">79字</span>
+      <span class="post-count">138字</span>
     </span>
   </span>
 
@@ -276,22 +276,13 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><blockquote>
-<p>mybatis入门案例出现“Exception in thread “main”<br>java.lang.NullPointerException”问题 （一般是配置文件有问题）</p>
-</blockquote>
-<a id="more"></a>
+    <h1 id="如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”"><a href="#如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”" class="headerlink" title="如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”"></a>如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”</h1><p>当用Maven创建Web项目到这一步的时候，在properties中添加一个参数<br> <img src="https://img-blog.csdnimg.cn/20200827150657473.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"> </p>
+ <a id="more"></a>
+<p> <img src="https://img-blog.csdnimg.cn/2020082715085366.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"> <img src="https://img-blog.csdnimg.cn/20200827151129653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"> 一切准备就绪你会发现创建工程异常之快 键值对为：</p>
 <blockquote>
-<p>先看错误</p>
+ <blockquote> 
+  name:archetypeCatalog value:internal archetypeCatalog表示插件使用的archetype元数据，不加这个参数时默认为remote，local，即中央仓库archetype元数据，由于中央仓库的archetype太多了，所以导致很慢，指定internal来表示仅使用内部元数据 
 </blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200817202304326.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>看代码</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200817202441511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>控制台定位代码错误发现第一行加载的配置文件居然是null 解决方法见图，加“/”就好了并且成功打印user对象</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20200817202746238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NjIxMzky,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 
     
 
@@ -338,7 +329,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://blog.csdn.net/qq_45621392/2020/09/15/mybatis入门案例出现“Exception in thread “main“ java.lang.NullPointerException”问题/" title="mybatis入门案例出现“Exception in thread “main“ java.lang.NullPointerException”问题" target="_blank">https://blog.csdn.net/qq_45621392/2020/09/15/mybatis入门案例出现“Exception in thread “main“ java.lang.NullPointerException”问题/</a>
+          <a href="https://blog.csdn.net/qq_45621392/2020/09/21/如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”/" title="如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可" target="_blank">https://blog.csdn.net/qq_45621392/2020/09/21/如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”/</a>
         </li>
         
         <li>
@@ -360,15 +351,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Mybatis框架</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
         		</li>
       		
 		</ul>
@@ -424,7 +415,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://blog.csdn.net/qq_45621392/2020/09/15/mybatis%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%E5%87%BA%E7%8E%B0%E2%80%9CException%20in%20thread%20%E2%80%9Cmain%E2%80%9C%20java.lang.NullPointerException%E2%80%9D%E9%97%AE%E9%A2%98/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://blog.csdn.net/qq_45621392/2020/09/21/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Maven%E4%BD%BF%E7%94%A8%E9%AA%A8%E6%9E%B6%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E8%BF%87%E6%85%A2%E2%80%9C%E5%8F%AA%E9%9C%80%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E9%94%AE%E5%80%BC%E5%AF%B9%E5%8D%B3%E5%8F%AF%E2%80%9D/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -438,6 +429,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2020/09/27/maven%E7%9A%84%E7%A7%81%E6%9C%8D%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          maven的私服环境搭建（安装与启动以及卸载）
+        
+      </div>
+    </a>
   
   
     <a href="/2020/09/15/%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%EF%BC%88%E7%A7%81%E6%9C%89%E5%BA%93%EF%BC%89%EF%BC%9ADownloading_%20http___repo.maven.apache.org_maven2_/" id="article-nav-older" class="article-nav-link-wrap">
@@ -468,7 +468,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8"><span class="toc-number">1.</span> <span class="toc-text">异常</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Maven%E4%BD%BF%E7%94%A8%E9%AA%A8%E6%9E%B6%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B%E8%BF%87%E6%85%A2%E2%80%9C%E5%8F%AA%E9%9C%80%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E9%94%AE%E5%80%BC%E5%AF%B9%E5%8D%B3%E5%8F%AF%E2%80%9D"><span class="toc-number">1.</span> <span class="toc-text">如何解决Maven使用骨架创建工程过慢“只需添加一个键值对即可”</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -735,6 +735,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">maven仓库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">私服</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
